@@ -286,12 +286,6 @@ diff --git a/net/ipv4/tcp_bbr.c b/net/ipv4/tcp_bbr.c
 -	bbr->pacing_gain = BBR_UNIT;
 -	bbr->cwnd_gain = bbr_cwnd_gain;
  	bbr->cycle_idx = CYCLE_LEN - 1 - prandom_u32_max(bbr_cycle_rand);
-@@ -680,4 +749,3 @@
- 	 */
--	bw = (u64)rs->delivered * BW_UNIT;
--	do_div(bw, rs->interval_us);
-+	bw = div64_long((u64)rs->delivered * BW_UNIT, rs->interval_us);
- 
 @@ -700,2 +768,63 @@
  
 +/* Estimates the windowed max degree of ack aggregation.
