@@ -72,7 +72,7 @@ return L.Class.extend({
 
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
-			_('Model'),            "Rockchip RK3328 ARMv8" + boardinfo.model + cpubench.cpubench,
+			_('Model'),            "Rockchip RK3328 ARMv8: 4 Core 4 Thread" + cpubench.cpubench,
 			_('CPU Info'),         cpuinfo.cpuinfo,
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + ' / ' : '') + (luciversion || ''),
 			_('Kernel Version'),   boardinfo.kernel,
