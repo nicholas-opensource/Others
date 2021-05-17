@@ -1,0 +1,63 @@
+From a68e6a5e2ea79e538979b102148ad783bb97ff00 Mon Sep 17 00:00:00 2001
+From: Nicholas Sun <44309749+nicholas-opensource@users.noreply.github.com>
+Date: Tue, 18 May 2021 02:08:28 +1000
+Subject: [PATCH] Add Openwrt
+
+---
+ package/emortal/autocore/files/arm/rpcd_10_system.js | 7 +++++++
+ package/emortal/autocore/files/x86/rpcd_10_system.js | 7 +++++++
+ 2 files changed, 14 insertions(+)
+
+diff --git a/package/emortal/autocore/files/arm/rpcd_10_system.js b/package/emortal/autocore/files/arm/rpcd_10_system.js
+index 1f3b63b..fe0f256 100644
+--- a/package/emortal/autocore/files/arm/rpcd_10_system.js
++++ b/package/emortal/autocore/files/arm/rpcd_10_system.js
+@@ -72,6 +72,11 @@ return baseclass.extend({
+ 		}
+ 
+ 		// TODO: This is ugly
++		var oplink = document.createElement('a');
++		oplink.append('OpenWrt');
++		oplink.href = 'https://openwrt.org';
++		oplink.target = '_blank';
++
+ 		var projectlink = document.createElement('a');
+ 		projectlink.append('Project ImmortalWrt');
+ 		projectlink.href = 'https://github.com/immortalwrt';
+@@ -83,6 +88,8 @@ return baseclass.extend({
+ 		corelink.target = '_blank';
+ 
+ 		var sourcelink = document.createElement('placeholder');
++		sourcelink.append(oplink);
++		sourcelink.append(' / ');
+ 		sourcelink.append(projectlink);
+ 		sourcelink.append(' / ');
+ 		sourcelink.append(corelink);
+diff --git a/package/emortal/autocore/files/x86/rpcd_10_system.js b/package/emortal/autocore/files/x86/rpcd_10_system.js
+index bf7ddd0..9145989 100644
+--- a/package/emortal/autocore/files/x86/rpcd_10_system.js
++++ b/package/emortal/autocore/files/x86/rpcd_10_system.js
+@@ -72,6 +72,11 @@ return baseclass.extend({
+ 		}
+ 
+ 		// TODO: This is ugly
++		var oplink = document.createElement('a');
++		oplink.append('OpenWrt');
++		oplink.href = 'https://openwrt.org';
++		oplink.target = '_blank';
++
+ 		var projectlink = document.createElement('a');
+ 		projectlink.append('Project ImmortalWrt');
+ 		projectlink.href = 'https://github.com/immortalwrt';
+@@ -83,6 +88,8 @@ return baseclass.extend({
+ 		corelink.target = '_blank';
+ 
+ 		var sourcelink = document.createElement('placeholder');
++		sourcelink.append(oplink);
++		sourcelink.append(' / ');
+ 		sourcelink.append(projectlink);
+ 		sourcelink.append(' / ');
+ 		sourcelink.append(corelink);
+-- 
+2.32.0-rc0
+

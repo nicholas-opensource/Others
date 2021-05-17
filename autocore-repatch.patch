@@ -1,0 +1,87 @@
+From 368ff21d6082fe922bc55f986366d31207ee4a44 Mon Sep 17 00:00:00 2001
+From: Nicholas Sun <44309749+nicholas-opensource@users.noreply.github.com>
+Date: Tue, 18 May 2021 02:08:28 +1000
+Subject: [PATCH] autocore-repatch
+
+---
+ .../autocore/files/arm/rpcd_10_system.js      | 19 +------------------
+ .../autocore/files/x86/rpcd_10_system.js      | 19 +------------------
+ 2 files changed, 2 insertions(+), 36 deletions(-)
+
+diff --git a/package/emortal/autocore/files/arm/rpcd_10_system.js b/package/emortal/autocore/files/arm/rpcd_10_system.js
+index 1f3b63b..d2e235e 100644
+--- a/package/emortal/autocore/files/arm/rpcd_10_system.js
++++ b/package/emortal/autocore/files/arm/rpcd_10_system.js
+@@ -71,22 +71,6 @@ return baseclass.extend({
+ 			);
+ 		}
+ 
+-		// TODO: This is ugly
+-		var projectlink = document.createElement('a');
+-		projectlink.append('Project ImmortalWrt');
+-		projectlink.href = 'https://github.com/immortalwrt';
+-		projectlink.target = '_blank';
+-
+-		var corelink = document.createElement('a');
+-		corelink.append('ImmortalWrt Core');
+-		corelink.href = 'https://github.com/immortalwrt/immortalwrt';
+-		corelink.target = '_blank';
+-
+-		var sourcelink = document.createElement('placeholder');
+-		sourcelink.append(projectlink);
+-		sourcelink.append(' / ');
+-		sourcelink.append(corelink);
+-
+ 		var fields = [
+ 			_('Hostname'),         boardinfo.hostname,
+ 			_('Model'),            boardinfo.model + cpubench.cpubench,
+@@ -100,8 +84,7 @@ return baseclass.extend({
+ 				systeminfo.load[1] / 65535.0,
+ 				systeminfo.load[2] / 65535.0
+ 			) : null,
+-			_('CPU usage (%)'),    cpuusage.cpuusage,
+-			_('Source Code'),      sourcelink
++			_('CPU usage (%)'),    cpuusage.cpuusage
+ 		];
+ 
+ 		var table = E('table', { 'class': 'table' });
+diff --git a/package/emortal/autocore/files/x86/rpcd_10_system.js b/package/emortal/autocore/files/x86/rpcd_10_system.js
+index bf7ddd0..d36d372 100644
+--- a/package/emortal/autocore/files/x86/rpcd_10_system.js
++++ b/package/emortal/autocore/files/x86/rpcd_10_system.js
+@@ -71,22 +71,6 @@ return baseclass.extend({
+ 			);
+ 		}
+ 
+-		// TODO: This is ugly
+-		var projectlink = document.createElement('a');
+-		projectlink.append('Project ImmortalWrt');
+-		projectlink.href = 'https://github.com/immortalwrt';
+-		projectlink.target = '_blank';
+-
+-		var corelink = document.createElement('a');
+-		corelink.append('ImmortalWrt Core');
+-		corelink.href = 'https://github.com/immortalwrt/immortalwrt';
+-		corelink.target = '_blank';
+-
+-		var sourcelink = document.createElement('placeholder');
+-		sourcelink.append(projectlink);
+-		sourcelink.append(' / ');
+-		sourcelink.append(corelink);
+-
+ 		var fields = [
+ 			_('Hostname'),         boardinfo.hostname,
+ 			_('Model'),            boardinfo.model + cpubench.cpubench,
+@@ -100,8 +84,7 @@ return baseclass.extend({
+ 				systeminfo.load[1] / 65535.0,
+ 				systeminfo.load[2] / 65535.0
+ 			) : null,
+-			_('CPU usage (%)'),    cpuusage.cpuusage,
+-			_('Source Code'),      sourcelink
++			_('CPU usage (%)'),    cpuusage.cpuusage
+ 		];
+ 
+ 		var table = E('table', { 'class': 'table' });
+-- 
+2.32.0-rc0
+
